@@ -1,21 +1,21 @@
 const mongoose = require('mongoose');
 
 const TaskSchema = new mongoose.Schema({
-    title:{
+    title: {
         type: String,
-        require: true,
-        minLength: 1,
+        required: true,
+        minlength: 1,
         trim: true
     },
-    _listId:{
+    _listId: {
         type: mongoose.Types.ObjectId,
         required: true
     },
     completed: {
         type: Boolean,
         default: false
-    }    
-});
+    }
+})
 
 const Task = mongoose.model('Task', TaskSchema);
 

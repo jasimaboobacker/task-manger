@@ -1,18 +1,20 @@
+// This file will handle connection logic to the MongoDB database
+
 const mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise;
-
-mongoose.connect('mongodb://localhost:27017/TaskManager',{useNewUrlParser: true}).then(()=>{
-    console.log("Connected to db");
-}).catch((e)=>{
-    console.log("Error Connecting to DB");
+mongoose.connect('mongodb://localhost:27017/TaskManager', { useNewUrlParser: true }).then(() => {
+    console.log("Connected to MongoDB successfully :)");
+}).catch((e) => {
+    console.log("Error while attempting to connect to MongoDB");
     console.log(e);
 });
 
-mongoose.set('useCreateIndex',true);
-mongoose.set('useFindAndModify',false);
+// To prevent deprectation warnings (from MongoDB native driver)
+mongoose.set('useCreateIndex', true);
+mongoose.set('useFindAndModify', false);
 
-module.exports={
+
+module.exports = {
     mongoose
-    
-}
+};

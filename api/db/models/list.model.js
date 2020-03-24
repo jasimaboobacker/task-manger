@@ -1,13 +1,19 @@
 const mongoose = require('mongoose');
 
 const ListSchema = new mongoose.Schema({
-    title:{
+    title: {
         type: String,
-        require: true,
-        minLength: 1,
+        required: true,
+        minlength: 1,
         trim: true
-    }    
-});
+    },
+    // with auth
+    _userId: {
+        type: mongoose.Types.ObjectId,
+        required: true
+    }
+
+})
 
 const List = mongoose.model('List', ListSchema);
 

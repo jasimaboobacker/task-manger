@@ -91,11 +91,14 @@
         &:hover {
             box-shadow: 0 0 0 5px #eeeeee;
 
-            
+            .task-buttons {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
     }
 
-    &.complete {
+    &.completed .task-text {
         text-decoration: line-through;
         opacity: 0.8;
     }
@@ -128,3 +131,4 @@
     color: #777;
     text-align: center;
 }
+
